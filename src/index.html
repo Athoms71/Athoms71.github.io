@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Portfolio de Thomas Loctin, étudiant ingénieur en développement logiciel et IA, à la recherche d'un contrat de professionnalisation pour septembre 2026." />
+		<title>Thomas Loctin - Portfolio Ingénieur</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header>
+			<div class="logo"><a href="#home">PORFTOLIO | THOMAS LOCTIN</a></div>
+			<nav>
+				<ul>
+					<li><a href="#about">À propos</a></li>
+					<li><a href="#timeline">Mon Parcours</a></li>
+					<li><a href="#projects">Projets</a></li>
+					<li><a href="#skills">Compétences</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main>
+			<section id="home">
+				<h1 class="hero-title">Futur Ingénieur Logiciel & IA</h1>
+				<p class="hero-subtitle">Recherche Contrat de Professionnalisation • Septembre 2026 • 1 An</p>
+
+				<div class="hero-tags">
+					<span class="tag">Intelligence Artificielle</span>
+					<span class="tag">Dev Web/Python/Java/C++</span>
+					<span class="tag">Cloud Computing</span>
+				</div>
+
+				<div class="btn-group">
+					<a href="https://www.linkedin.com/in/thomas-loctin/" target="_blank" class="btn btn-primary"> LinkedIn </a>
+					<a href="https://github.com/Athoms71" target="_blank" class="btn btn-primary"> GitHub </a>
+					<a href="../assets/CV.pdf" class="btn btn-outline" target="_blank"> Télécharger CV </a>
+				</div>
+			</section>
+
+			<section id="about">
+				<div class="content-wrapper">
+					<div class="photo-container">
+						<img src="../assets/moi.jpg" alt="Thomas Loctin" />
+					</div>
+					<div class="about-text">
+						<h2>À Propos</h2>
+						<p>Étudiant de deuxième année en ingénierie informatique à Polytech Dijon, je suis passionné par l'architecture logicielle et l'apprentissage automatique.</p>
+						<p>
+							Fort d'une expérience variée allant du stage ouvrier dans le nucléaire à Framatome à une future expérience internationale en Malaisie, j'ai développé une grande capacité
+							d'adaptation. Je maîtrise l'anglais (B2) et je cherche aujourd'hui à mettre mes compétences en Web, Java, C++ et Cloud au service de projets innovants.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="timeline">
+				<h2>Mon Parcours</h2>
+				<div class="timeline-container">
+					<div class="timeline-item right">
+						<div class="timeline-content">
+							<span class="date">Septembre 2026 - 2027</span>
+							<h3 class="role">Alternant Ingénieur (Recherche)</h3>
+							<span class="place">Entreprise à définir</span>
+							<p>Contrat de Professionnalisation sur 1 an.</p>
+						</div>
+					</div>
+
+					<div class="timeline-item left">
+						<div class="timeline-content">
+							<span class="date">2026 (À venir)</span>
+							<h3 class="role">Stage en Laboratoire</h3>
+							<span class="place">Universiti Teknologi Petronas, Malaisie</span>
+							<p>Recherche et développement en contexte international.</p>
+							<p>Gestion et coordination d'essaims de drônes.</p>
+						</div>
+					</div>
+
+					<div class="timeline-item right">
+						<div class="timeline-content">
+							<span class="date">2022 - Présent</span>
+							<h3 class="role">Emploi étudiant</h3>
+							<span class="place">Carrefour Sud, Chalon sur Saône</span>
+							<p>Gestion du service Caisse, préparateur de commande et service Location.</p>
+							<p>Développement de compétences en service client, gestion du stress et travail d'équipe.</p>
+						</div>
+					</div>
+
+					<div class="timeline-item left">
+						<div class="timeline-content">
+							<span class="date">2022 - Présent</span>
+							<h3 class="role">Cycle Ingénieur Informatique</h3>
+							<span class="place">Polytech Dijon</span>
+							<p>Spécialisation Dév. Logiciel & IA.</p>
+						</div>
+					</div>
+
+					<div class="timeline-item right">
+						<div class="timeline-content">
+							<span class="date">Août 2023</span>
+							<h3 class="role">Stage Ouvrier</h3>
+							<span class="place">Framatome, Saint-Marcel</span>
+							<p>Assemblage de composants nucléaires, sécurité industrielle.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="projects">
+				<h2>Projets Récents</h2>
+				<div class="carousel-container">
+					<div class="carousel-track" id="track">
+						<article class="project-card" onclick="openModal('modal1')">
+							<div class="project-img"><img src="../assets/authobat.png" alt="" /></div>
+							<h3>Phishing Awareness</h3>
+							<span class="status-badge status-wip">En cours</span>
+							<p style="font-size: 0.8rem; margin-top: 10px; color: #888">Cybersécurité, Web</p>
+						</article>
+
+						<article class="project-card" onclick="openModal('modal2')">
+							<div class="project-img"><img src="../assets/calculatrice.png" alt="" /></div>
+							<h3>Calculatrice Cloud Native</h3>
+							<span class="status-badge status-done">Terminé</span>
+							<p style="font-size: 0.8rem; margin-top: 10px; color: #888">Python, Cloud Computing</p>
+						</article>
+
+						<article class="project-card" onclick="openModal('modal3')">
+							<div class="project-img"><img src="../assets/polyhome.jpeg" alt="" /></div>
+							<h3>PolyHome</h3>
+							<span class="status-badge status-done">Terminé</span>
+							<p style="font-size: 0.8rem; margin-top: 10px; color: #888">HTML, CSS, JS</p>
+						</article>
+
+						<article class="project-card" onclick="openModal('modal4')">
+							<div class="project-img"><img src="../assets/marty_app.jpg" alt="" /></div>
+							<h3>Marty The Robot</h3>
+							<span class="status-badge status-done">Terminé</span>
+							<p style="font-size: 0.8rem; margin-top: 10px; color: #888">Python, Pygame</p>
+						</article>
+
+						<article class="project-card" onclick="openModal('modal5')">
+							<div class="project-img"><img src="../assets/logo_rpg.png" alt="" /></div>
+							<h3>RPG - Les Royaumes de l'Éclipse</h3>
+							<span class="status-badge status-done">Terminé</span>
+							<p style="font-size: 0.8rem; margin-top: 10px; color: #888">Python</p>
+						</article>
+					</div>
+
+					<div class="carousel-nav">
+						<button class="nav-btn" id="prevBtn">&#8592;</button>
+						<div class="carousel-dots" id="dotsContainer"></div>
+						<button class="nav-btn" id="nextBtn">&#8594;</button>
+					</div>
+				</div>
+			</section>
+
+			<section id="skills">
+				<h2>Compétences Techniques</h2>
+				<div class="skills-grid">
+					<div class="skill-card">
+						<div class="skill-name"><span>C++ / Java</span> <span>Intermédiaire</span></div>
+						<div class="progress-bg"><div class="progress-fill" data-width="40%"></div></div>
+					</div>
+
+					<div class="skill-card">
+						<div class="skill-name"><span>Python (IA/Data)</span> <span>Intermédiaire</span></div>
+						<div class="progress-bg"><div class="progress-fill" data-width="60%"></div></div>
+					</div>
+
+					<div class="skill-card">
+						<div class="skill-name"><span>Web</span> <span>Avancé</span></div>
+						<div class="progress-bg"><div class="progress-fill" data-width="70%"></div></div>
+					</div>
+
+					<div class="skill-card">
+						<div class="skill-name"><span>Bases de données</span> <span>Intermédiaire</span></div>
+						<div class="progress-bg"><div class="progress-fill" data-width="45%"></div></div>
+					</div>
+
+					<div class="skill-card">
+						<div class="skill-name"><span>Cloud Computing</span> <span>Novice</span></div>
+						<div class="progress-bg"><div class="progress-fill" data-width="30%"></div></div>
+					</div>
+
+					<div class="skill-card">
+						<div class="skill-name"><span>Configuration Réseau (CCNA1)</span> <span>Novice</span></div>
+						<div class="progress-bg"><div class="progress-fill" data-width="30%"></div></div>
+					</div>
+				</div>
+			</section>
+
+			<section id="contact">
+				<h2>Me Contacter</h2>
+				<p style="margin-bottom: 20px; color: var(--text-muted); text-align: center">
+					Je suis joignable par mail (thomas_loctin@etu.ube.fr) ou via le formulaire ci-dessous. <br />Vous pouvez également me trouver sur
+					<a href="https://www.linkedin.com/in/thomas-loctin/" target="_blank" style="border-bottom: var(--text-muted) 1px solid">LinkedIn</a>.
+				</p>
+				<form action="mailto:thomas_loctin@etu.ube.fr" method="post" enctype="text/plain">
+					<input type="text" name="name" placeholder="Votre Nom / Entreprise" required autocomplete="name" />
+					<input type="email" name="email" placeholder="Votre Email" required autocomplete="email" />
+					<textarea name="message" rows="5" placeholder="Votre message..." required></textarea>
+					<button type="submit" class="btn btn-primary">Envoyer le message</button>
+				</form>
+			</section>
+		</main>
+
+		<footer>
+			<p>Tous droits réservés © 2026 Thomas Loctin</p>
+		</footer>
+
+		<div id="modal1" class="modal">
+			<div class="modal-content">
+				<span class="close-modal" onclick="closeModal('modal1')">&times;</span>
+				<h2>Phishing Awareness</h2>
+				<div class="project-img"><img src="../assets/authobat.png" alt="" /></div>
+				<p><strong>Statut :</strong> Terminé</p>
+				<br />
+				<p>
+					<strong>Description :</strong> Développement d'un projet de sensibilisation au phishing pour promouvoir l'éducation à la cybersécurité. Ce projet utilise des scénarios réels
+					générés par IA pour former les utilisateurs. L'objectif est de créer une plateforme clé en main pour le client qui simule des attaques de phishing afin d'aider les utilisateurs à
+					reconnaître et à éviter ces menaces en ligne. Le projet a été réalisé en collaboration avec deux autres étudiants et notre professeur référent, et a permis de développer des
+					compétences en développement web, en IA et en sensibilisation à la cybersécurité.
+				</p>
+			</div>
+		</div>
+		<div id="modal2" class="modal">
+			<div class="modal-content">
+				<span class="close-modal" onclick="closeModal('modal2')">&times;</span>
+				<h2>Calculatrice Cloud Native</h2>
+				<div class="project-img"><img src="../assets/calculatrice.png" alt="" /></div>
+				<p><strong>Statut :</strong> Terminé</p>
+				<br />
+				<p>
+					<strong>Description :</strong> Développement d'une calculatrice distribuée en utilisant des technologies cloud native (Kubernetes, Terraform). Ce projet permet de faire des calculs
+					simples en utilisant des concepts de microservices (Redis, RabbitMQ) et de conteneurisation.
+				</p>
+			</div>
+		</div>
+		<div id="modal3" class="modal">
+			<div class="modal-content">
+				<span class="close-modal" onclick="closeModal('modal3')">&times;</span>
+				<h2>PolyHome</h2>
+				<div class="project-img"><img src="../assets/polyhome.jpeg" alt="" /></div>
+				<p><strong>Statut :</strong> En cours</p>
+				<br />
+				<p>
+					<strong>Description :</strong> Application native Android pour prendre en main les fonctionnalités de base autour du système afin de piloter une simulation Web d'une maison
+					domotique. Pilotage de la simulation Web via des requêtes HTTP, avec une interface utilisateur simple pour contrôler les appareils connectés. Ce projet permet d'explorer les
+					concepts de IoT et de développement mobile, tout en offrant une expérience pratique de l'intégration entre une application mobile et une simulation web.
+				</p>
+			</div>
+		</div>
+		<div id="modal4" class="modal">
+			<div class="modal-content">
+				<span class="close-modal" onclick="closeModal('modal4')">&times;</span>
+				<h2>Marty The Robot</h2>
+				<div class="project-img"><img src="../assets/marty_app.jpg" alt="" /></div>
+				<p><strong>Statut :</strong> Terminé</p>
+				<br />
+				<p>
+					<strong>Description :</strong> Projet de robotique éducative utilisant une plateforme de développement pour créer un robot interactif. Ce projet a permis d'explorer les concepts de
+					programmation embarquée et d'interaction homme-machine. Le but était de créer une application pour contrôler le robot et lui faire exécuter des tâches simples, tout en apprenant
+					les bases de la robotique et de l'IA. Le projet a été réalisé en collaboration avec une équipe d'étudiants passionnés.
+				</p>
+				<br />
+				<br />
+				<a href="https://github.com/Athoms71/Marty_Robot" target="_blank" class="btn btn-outline">Voir le Repo GitHub</a>
+			</div>
+		</div>
+		<div id="modal5" class="modal">
+			<div class="modal-content">
+				<span class="close-modal" onclick="closeModal('modal5')">&times;</span>
+				<h2>RPG - Les Royaumes de l'Éclipse</h2>
+				<div class="project-img"><img src="../assets/logo_rpg.png" alt="" /></div>
+				<p><strong>Statut :</strong> Terminé</p>
+				<br />
+				<p>
+					<strong>Description :</strong> Développement d'un jeu de rôle (RPG) en Python avec Pygame. Ce projet permet de créer une expérience de jeu immersive dans un monde fantastique dans
+					un style dialogue/actions. Le projet a été réalisé en collaboration avec un autre étudiant, et a permis de développer des compétences en programmation orientée objet, en design de
+					jeu et en gestion de projet.
+				</p>
+				<br />
+				<br />
+				<a href="https://github.com/Athoms71/RPG_Polytech-Dijon" target="_blank" class="btn btn-outline">Voir le Repo GitHub</a>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>

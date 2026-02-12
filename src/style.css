@@ -1,0 +1,511 @@
+/* --- VARIABLES & PALETTE (Style Sombre Boisé & Tech) --- */
+:root {
+	--bg-color: #0b0f10; /* Noir profond/encre */
+	--bg-secondary: #161b1d; /* Gris anthracite léger */
+	--primary: #2d6a4f; /* Vert Forêt (Nature/Tech stable) */
+	--tech-blue: #40916c; /* Bleu/Vert lumineux (IA/Dev) */
+	--wood-accent: #8d6e63; /* Brun bois (Bordures, détails) */
+	--text-main: #eceff1; /* Blanc cassé */
+	--text-muted: #b0bec5; /* Gris clair */
+	--nav-height: 60px;
+}
+
+/* --- RESET & BASE --- */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	background-color: var(--bg-color);
+	color: var(--text-main);
+	overflow-x: hidden;
+	/* Scroll Snap Settings */
+	scroll-snap-type: y mandatory;
+	height: 100vh;
+	overflow-y: scroll;
+}
+
+/* --- CUSTOM SCROLLBAR --- */
+::-webkit-scrollbar {
+	width: 10px;
+}
+::-webkit-scrollbar-track {
+	background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+	background: var(--wood-accent);
+	border-radius: 5px;
+	border: 2px solid var(--bg-color);
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--primary);
+}
+
+/* --- TYPOGRAPHY --- */
+h1,
+h2,
+h3 {
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+h2 {
+	color: var(--tech-blue);
+	margin-bottom: 2rem;
+	font-size: 2.5rem;
+	border-left: 5px solid var(--wood-accent);
+	padding-left: 15px;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+	transition: 0.3s;
+}
+
+/* --- LAYOUT --- */
+header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: var(--nav-height);
+	background: rgba(11, 15, 16, 0.95);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 5%;
+	z-index: 1000;
+	border-bottom: 1px solid var(--wood-accent);
+}
+
+.logo {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: var(--wood-accent);
+}
+
+nav ul {
+	display: flex;
+	list-style: none;
+	gap: 20px;
+}
+nav a:hover {
+	color: var(--tech-blue);
+}
+
+/* Sections Configuration for Snap Scroll */
+section {
+	height: 100vh;
+	width: 100%;
+	scroll-snap-align: start;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 80px 10%;
+	position: relative;
+}
+
+/* --- SECTION 1: ACCUEIL --- */
+#home {
+	background: radial-gradient(circle at center, #1b2524 0%, var(--bg-color) 40%);
+	text-align: center;
+}
+.hero-title {
+	font-size: 4rem;
+	margin-bottom: 1rem;
+	background: -webkit-linear-gradient(45deg, var(--wood-accent), var(--tech-blue));
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.hero-subtitle {
+	font-size: 1.5rem;
+	color: var(--text-muted);
+	margin-bottom: 2rem;
+}
+.hero-tags {
+	display: flex;
+	gap: 15px;
+	justify-content: center;
+	margin-bottom: 3rem;
+}
+.tag {
+	background: rgba(45, 106, 79, 0.2);
+	border: 1px solid var(--tech-blue);
+	padding: 5px 15px;
+	border-radius: 20px;
+	font-size: 0.9rem;
+}
+.btn-group {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+}
+.btn {
+	padding: 12px 30px;
+	border-radius: 5px;
+	font-weight: bold;
+	border: 1px solid var(--wood-accent);
+	cursor: pointer;
+}
+.btn-primary {
+	background: var(--primary);
+	color: white;
+	border: none;
+}
+.btn-primary:hover {
+	background: var(--tech-blue);
+}
+.btn-outline {
+	background: transparent;
+	color: var(--wood-accent);
+}
+.btn-outline:hover {
+	border-color: var(--tech-blue);
+	color: var(--tech-blue);
+}
+
+/* --- SECTION 2: A PROPOS --- */
+#about .content-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 4rem;
+	align-items: center;
+	max-width: 1200px;
+}
+.photo-container {
+	width: 100%;
+	aspect-ratio: 1/1;
+	background-color: var(--bg-secondary);
+	border: 2px solid var(--wood-accent);
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+}
+.photo-container img {
+	width: 100%;
+}
+.about-text p {
+	line-height: 1.8;
+	font-size: 1.1rem;
+	color: var(--text-muted);
+	margin-bottom: 1rem;
+}
+
+/* --- SECTION 3: PARCOURS (Timeline) --- */
+#timeline {
+	align-items: flex-start;
+	height: 100%;
+}
+.timeline-container {
+	position: relative;
+	max-width: 1000px;
+	margin: 0 auto;
+	width: 100%;
+}
+/* La ligne verticale */
+.timeline-container::after {
+	content: "";
+	position: absolute;
+	width: 4px;
+	background-color: var(--wood-accent);
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	margin-left: -2px;
+}
+.timeline-item {
+	padding: 10px 40px;
+	position: relative;
+	width: 50%;
+	box-sizing: border-box;
+}
+.timeline-item.left {
+	left: 0;
+	text-align: right;
+}
+.timeline-item.right {
+	left: 50%;
+}
+.timeline-item::after {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	right: -12px;
+	background-color: var(--bg-color);
+	border: 3px solid var(--tech-blue);
+	top: 20px;
+	border-radius: 50%;
+	z-index: 1;
+	transition: background-color 0.3s ease;
+}
+
+.timeline-item.right::after {
+	right: auto;
+	left: -12px;
+}
+.timeline-item:hover::after {
+	background-color: var(--tech-blue);
+}
+.timeline-content {
+	padding: 20px;
+	background-color: var(--bg-secondary);
+	border-radius: 6px;
+	border-left: 3px solid var(--tech-blue);
+}
+.timeline-item.left .timeline-content {
+	border-left: none;
+	border-right: 3px solid var(--tech-blue);
+}
+
+.date {
+	font-weight: bold;
+	color: var(--wood-accent);
+	display: block;
+	margin-bottom: 5px;
+}
+.role {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: var(--text-main);
+}
+.place {
+	font-style: italic;
+	color: var(--text-muted);
+	font-size: 0.9rem;
+}
+
+/* --- SECTION 4: PROJETS --- */
+.carousel-container {
+	position: relative;
+	width: 80%;
+	max-width: 1000px;
+	overflow: hidden;
+	padding: 20px 0;
+}
+.carousel-track {
+	display: flex;
+	transition: transform 0.5s ease-in-out;
+	gap: 20px;
+}
+.project-card {
+	min-width: 300px;
+	height: 100%;
+	flex: 0 0 calc(100% - 14px); /* 1 carte visible */
+	background: var(--bg-secondary);
+	border: 1px solid #333;
+	border-radius: 8px;
+	padding: 15px;
+	cursor: pointer;
+	transition: transform 0.3s;
+}
+.project-card:hover {
+	transform: translateY(-5px);
+	border-color: var(--tech-blue);
+}
+.project-img {
+	width: 100%;
+	max-height: 200px;
+	background: #fff;
+	margin-bottom: 15px;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #555;
+}
+.project-img img {
+	width: 100%;
+	max-height: 200px;
+	object-fit: contain;
+	border-radius: 4px;
+}
+.status-badge {
+	font-size: 0.7rem;
+	padding: 2px 8px;
+	border-radius: 4px;
+	text-transform: uppercase;
+}
+.status-wip {
+	background: #e67e22;
+	color: #fff;
+}
+.status-done {
+	background: var(--primary);
+	color: #fff;
+}
+
+.carousel-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+}
+.nav-btn {
+	background: none;
+	border: 1px solid var(--wood-accent);
+	color: var(--text-main);
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 50%;
+	transition: all 0.3s;
+}
+.nav-btn:hover {
+	background: var(--wood-accent);
+	color: var(--bg-color);
+}
+.carousel-dots {
+	display: flex;
+	gap: 12px;
+}
+.dot {
+	width: 10px;
+	height: 10px;
+	background: #333;
+	border-radius: 50%;
+}
+.dot.active {
+	background: var(--tech-blue);
+}
+
+/* --- MODAL --- */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 2000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8); /* Fond sombre */
+	backdrop-filter: blur(5px); /* Effet flou */
+	justify-content: center;
+	align-items: center;
+}
+.modal-content {
+	background-color: var(--bg-secondary);
+	padding: 40px;
+	border: 1px solid var(--wood-accent);
+	width: 60%;
+	max-width: 700px;
+	border-radius: 8px;
+	position: relative;
+}
+.modal-content p {
+	text-align: justify;
+}
+.close-modal {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	color: var(--text-main);
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/* --- SECTION 5: COMPÉTENCES --- */
+.skills-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 30px;
+	width: 100%;
+	max-width: 1000px;
+}
+.skill-card {
+	background: var(--bg-secondary);
+	padding: 20px;
+	border-radius: 8px;
+	border-bottom: 3px solid var(--wood-accent);
+}
+.skill-name {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+.progress-bg {
+	width: 100%;
+	height: 8px;
+	background: #333;
+	border-radius: 4px;
+}
+.progress-fill {
+	height: 100%;
+	background: linear-gradient(90deg, var(--primary), var(--tech-blue));
+	border-radius: 4px;
+	width: 0%; /* Animé via JS */
+	transition: width 1.5s ease-out;
+}
+
+/* --- SECTION 6: CONTACT --- */
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 100%;
+	max-width: 500px;
+}
+input,
+textarea {
+	padding: 15px;
+	background: var(--bg-secondary);
+	border: 1px solid #333;
+	color: var(--text-main);
+	border-radius: 5px;
+	font-family: inherit;
+	resize: none;
+	overflow-y: auto;
+}
+input:focus,
+textarea:focus {
+	outline: none;
+	border-color: var(--tech-blue);
+}
+
+/* --- FOOTER & PROGRESS BAR --- */
+footer {
+	height: 80px; /* Pas dans le scroll snap */
+	scroll-snap-align: none;
+	background: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #555;
+	font-size: 0.8rem;
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 768px) {
+	.content-wrapper {
+		grid-template-columns: 1fr !important;
+		text-align: center;
+	}
+	.timeline-container::after {
+		left: 31px;
+	}
+	.timeline-item {
+		width: 100%;
+		padding-left: 70px;
+		padding-right: 25px;
+	}
+	.timeline-item.right {
+		left: 0%;
+	}
+	.timeline-item.left {
+		text-align: left;
+	}
+	.timeline-item.left .timeline-content {
+		border-left: 3px solid var(--tech-blue);
+		border-right: none;
+	}
+	.project-card {
+		flex: 0 0 100%;
+	} /* 1 carte sur mobile */
+	h1 {
+		font-size: 2.5rem;
+	}
+}
