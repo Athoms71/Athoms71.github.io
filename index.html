@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="fr">
+	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -69,7 +70,7 @@
 
 					<div class="timeline-item left">
 						<div class="timeline-content">
-							<span class="date">2026 (À venir)</span>
+							<span class="date">Avril 2026 (À venir)</span>
 							<h3 class="role">Stage en Laboratoire</h3>
 							<span class="place">Universiti Teknologi Petronas, Malaisie</span>
 							<p>Recherche et développement en contexte international.</p>
@@ -79,7 +80,7 @@
 
 					<div class="timeline-item right">
 						<div class="timeline-content">
-							<span class="date">2022 - Présent</span>
+							<span class="date">Mars 2024 - Mars 2026</span>
 							<h3 class="role">Emploi étudiant</h3>
 							<span class="place">Carrefour Sud, Chalon sur Saône</span>
 							<p>Gestion du service Caisse, préparateur de commande et service Location.</p>
@@ -119,27 +120,34 @@
 						</article>
 
 						<article class="project-card" onclick="openModal('modal2')">
+							<div class="project-img"><img src="../assets/homy.png" alt="" /></div>
+							<h3>Homy</h3>
+							<span class="status-badge status-wip">En cours</span>
+							<p style="font-size: 0.8rem; margin-top: 10px; color: #888">Web, React, Supabase</p>
+						</article>
+
+						<article class="project-card" onclick="openModal('modal3')">
 							<div class="project-img"><img src="../assets/calculatrice.png" alt="" /></div>
 							<h3>Calculatrice Cloud Native</h3>
 							<span class="status-badge status-done">Terminé</span>
 							<p style="font-size: 0.8rem; margin-top: 10px; color: #888">Python, Cloud Computing</p>
 						</article>
 
-						<article class="project-card" onclick="openModal('modal3')">
+						<article class="project-card" onclick="openModal('modal4')">
 							<div class="project-img"><img src="../assets/polyhome.jpeg" alt="" /></div>
 							<h3>PolyHome</h3>
 							<span class="status-badge status-done">Terminé</span>
 							<p style="font-size: 0.8rem; margin-top: 10px; color: #888">HTML, CSS, JS</p>
 						</article>
 
-						<article class="project-card" onclick="openModal('modal4')">
+						<article class="project-card" onclick="openModal('modal5')">
 							<div class="project-img"><img src="../assets/marty_app.jpg" alt="" /></div>
 							<h3>Marty The Robot</h3>
 							<span class="status-badge status-done">Terminé</span>
 							<p style="font-size: 0.8rem; margin-top: 10px; color: #888">Python, Pygame</p>
 						</article>
 
-						<article class="project-card" onclick="openModal('modal5')">
+						<article class="project-card" onclick="openModal('modal6')">
 							<div class="project-img"><img src="../assets/logo_rpg.png" alt="" /></div>
 							<h3>RPG - Les Royaumes de l'Éclipse</h3>
 							<span class="status-badge status-done">Terminé</span>
@@ -193,14 +201,15 @@
 			<section id="contact">
 				<h2>Me Contacter</h2>
 				<p style="margin-bottom: 20px; color: var(--text-muted); text-align: center">
-					Je suis joignable par mail (thomas_loctin@etu.ube.fr) ou via le formulaire ci-dessous. <br />Vous pouvez également me trouver sur
+					Je suis joignable par mail (thomas.loctin@gmail.com) ou via le formulaire ci-dessous. <br />Vous pouvez également me trouver sur
 					<a href="https://www.linkedin.com/in/thomas-loctin/" target="_blank" style="border-bottom: var(--text-muted) 1px solid">LinkedIn</a>.
 				</p>
-				<form action="mailto:thomas_loctin@etu.ube.fr" method="post" enctype="text/plain">
-					<input type="text" name="name" placeholder="Votre Nom / Entreprise" required autocomplete="name" />
-					<input type="email" name="email" placeholder="Votre Email" required autocomplete="email" />
+				<form id="contact-form">
+					<input type="text" name="from_name" placeholder="Votre Nom / Entreprise" required autocomplete="name" />
+					<input type="email" name="reply_to" placeholder="Votre Email" required autocomplete="email" />
 					<textarea name="message" rows="5" placeholder="Votre message..." required></textarea>
-					<button type="submit" class="btn btn-primary">Envoyer le message</button>
+					<button type="submit" class="btn btn-primary" id="submit-btn">Envoyer le message</button>
+					<p id="form-status" style="text-align: center; font-size: 0.9rem; margin-top: 10px"></p>
 				</form>
 			</section>
 		</main>
@@ -227,6 +236,21 @@
 		<div id="modal2" class="modal">
 			<div class="modal-content">
 				<span class="close-modal" onclick="closeModal('modal2')">&times;</span>
+				<h2>Homy</h2>
+				<div class="project-img"><img src="../assets/homy.png" alt="" /></div>
+				<p><strong>Statut :</strong> En cours</p>
+				<br />
+				<p>
+					<strong>Description :</strong> Développement d'une PWA (Progressive Web App) pour la gestion de foyers pour les couples, colocataires... Cette application permet de gérer les
+					listes de courses, les dépenses communes et les événements du foyer. L'objectif est de créer une expérience utilisateur fluide et intuitive sur tous les appareils, avec des
+					fonctionnalités telles que la synchronisation en temps réel, les notifications et une interface conviviale. Ce projet me permet de développer des compétences en développement web
+					et en design d'interface utilisateur.
+				</p>
+			</div>
+		</div>
+		<div id="modal3" class="modal">
+			<div class="modal-content">
+				<span class="close-modal" onclick="closeModal('modal3')">&times;</span>
 				<h2>Calculatrice Cloud Native</h2>
 				<div class="project-img"><img src="../assets/calculatrice.png" alt="" /></div>
 				<p><strong>Statut :</strong> Terminé</p>
@@ -237,9 +261,9 @@
 				</p>
 			</div>
 		</div>
-		<div id="modal3" class="modal">
+		<div id="modal4" class="modal">
 			<div class="modal-content">
-				<span class="close-modal" onclick="closeModal('modal3')">&times;</span>
+				<span class="close-modal" onclick="closeModal('modal4')">&times;</span>
 				<h2>PolyHome</h2>
 				<div class="project-img"><img src="../assets/polyhome.jpeg" alt="" /></div>
 				<p><strong>Statut :</strong> En cours</p>
@@ -251,9 +275,9 @@
 				</p>
 			</div>
 		</div>
-		<div id="modal4" class="modal">
+		<div id="modal5" class="modal">
 			<div class="modal-content">
-				<span class="close-modal" onclick="closeModal('modal4')">&times;</span>
+				<span class="close-modal" onclick="closeModal('modal5')">&times;</span>
 				<h2>Marty The Robot</h2>
 				<div class="project-img"><img src="../assets/marty_app.jpg" alt="" /></div>
 				<p><strong>Statut :</strong> Terminé</p>
@@ -268,9 +292,9 @@
 				<a href="https://github.com/Athoms71/Marty_Robot" target="_blank" class="btn btn-outline">Voir le Repo GitHub</a>
 			</div>
 		</div>
-		<div id="modal5" class="modal">
+		<div id="modal6" class="modal">
 			<div class="modal-content">
-				<span class="close-modal" onclick="closeModal('modal5')">&times;</span>
+				<span class="close-modal" onclick="closeModal('modal6')">&times;</span>
 				<h2>RPG - Les Royaumes de l'Éclipse</h2>
 				<div class="project-img"><img src="../assets/logo_rpg.png" alt="" /></div>
 				<p><strong>Statut :</strong> Terminé</p>

@@ -169,3 +169,36 @@ const observer = new IntersectionObserver(
 if (skillsSection) {
 	observer.observe(skillsSection);
 }
+
+// --- 5. EMAILJS CONTACT FORM ---
+emailjs.init("VzP2zLF0jVxydfbPx");
+
+const contactForm = document.getElementById("contact-form");
+const submitBtn = document.getElementById("submit-btn");
+const formStatus = document.getElementById("form-status");
+
+contactForm.addEventListener("submit", function (e) {
+	e.preventDefault();
+
+	submitBtn.disabled = true;
+	submitBtn.textContent = "Envoi en cours...";
+	formStatus.textContent = "";
+
+	emailjs
+		.sendForm("service_jbv7bfq", "template_z3p0i4w", this)
+		.then(() => {
+			formStatus.style.color = "var(--tech-blue)";
+			formStatus.textContent = "✓ Message envoyé ! Je vous répondrai rapidement.";
+			contactForm.reset();
+			submitBtn.disabled = false;
+			submitBtn.textContent = "Envoyer le message";
+		})
+		.catch((err) => {
+			console.error(err);
+			formStatus.style.color = "#e74c3c";
+			formStatus.textContent = "✗ Erreur. Réessayez ou contactez-moi directement par mail.";
+			submitBtn.disabled = false;
+			submitBtn.textContent = "Envoyer le message";
+		});
+	// ← plus d'alert() ici
+});
